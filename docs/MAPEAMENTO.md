@@ -74,7 +74,7 @@ Alternativa mais simples (se quiser lançar em dias): **Nuvemshop/Shopify** pron
 
 **Fase 0 — Descoberta (agora):** olhar o Instagram 🔎, definir categorias, identidade visual, como ela vende hoje, como envia, como recebe.
 
-**Fase 1 — MVP (catálogo + admin):**
+**Fase 1 — MVP (catálogo + admin + checkout):**
 1. Setup do projeto, banco e deploy
 2. Cadastro/login de cliente e login de admin
 3. Admin: CRUD de produtos com múltiplas fotos e preço
@@ -100,16 +100,22 @@ Alternativa mais simples (se quiser lançar em dias): **Nuvemshop/Shopify** pron
 
 Domínio `.com.br` (~R$ 40/ano) + hospedagem/banco no plano gratuito. Custos variáveis: taxas do gateway (~1% Pix a ~5% cartão) e eventual upgrade do Supabase/Vercel quando o volume crescer.
 
-## 8. Decisões em aberto (perguntas para você/ela)
+## 8. Decisões já tomadas e pendências
 
-1. Ela já tem **nome de domínio** e logo? Qual identidade visual (cores)? 🔎
-2. Como quer **receber**: só WhatsApp no começo ou já Pix/cartão?
-3. Como **envia**: Correios, motoboy, retirada? Frete grátis acima de X?
-4. Vende **peça única** (estoque 1) ou tem quantidade? Faz sob encomenda?
-5. Vende para **atacado/revenda** também (preço diferente)?
-6. Quantas peças no catálogo inicial e quem vai fotografar?
-7. Quantas pessoas terão acesso ao painel (só ela)?
-8. Quer que o cliente **precise** de cadastro para comprar, ou pode comprar como convidado?
+**Definido:**
+- Estoque por **quantidade** (cada peça tem N unidades; baixa automática a cada venda paga)
+- Envio pelos **Correios** (frete por CEP via Melhor Envio ou API dos Correios; rastreio no pedido)
+- Pagamento por **Pix e cartão** desde o início (Mercado Pago), então o checkout completo entra na Fase 1
+- Identidade visual (cores e logo) **já definida** pela Shine — falta receber os arquivos (logo em PNG/SVG e códigos das cores)
+- **Sem domínio ainda** — registrar `.com.br` (ex.: shine...com.br) antes do lançamento; no desenvolvimento usamos o endereço gratuito da Vercel
+
+**Pendente (a alinhar com ela):**
+1. Nome do domínio desejado
+2. Arquivos do logo e paleta de cores
+3. Atacado/revenda? Frete grátis acima de X? Compra como convidado ou só com cadastro?
+4. Categorias iniciais e quantidade de peças no catálogo de lançamento; quem fotografa
+5. CNPJ/MEI para abrir conta no Mercado Pago e emitir etiquetas
+6. Política de trocas e devoluções
 
 ## 9. Estrutura sugerida do repositório
 
