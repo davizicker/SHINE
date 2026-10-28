@@ -26,7 +26,7 @@ export default function Recuperar() {
           <>
             <div><label className="label">E-mail</label>
               <input className="input" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></div>
-            <button className="btn-gold w-full" disabled={loading}>{loading ? 'Enviando…' : 'Enviar link'}</button>
+            <button className="btn-taupe w-full" disabled={loading}>{loading ? 'Enviando…' : 'Enviar link'}</button>
           </>
         )}
       </form>

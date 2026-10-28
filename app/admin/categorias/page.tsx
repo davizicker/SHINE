@@ -9,7 +9,7 @@ export default async function Categorias() {
       <h1 className="mb-6 text-4xl">Categorias</h1>
       <form action={addCategory} className="mb-6 flex gap-3">
         <input name="nome" required placeholder="Nova categoria (ex.: Tornozeleiras)" className="input" />
-        <button className="btn-gold">Adicionar</button>
+        <button className="btn-taupe">Adicionar</button>
       </form>
       <ul className="card divide-y divide-ink/10 p-0">
         {(data ?? []).map((c) => (

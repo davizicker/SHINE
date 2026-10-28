@@ -50,7 +50,7 @@ export default function Cadastro() {
           <span>Li e aceito a <Link href="/privacidade" className="underline" target="_blank">política de privacidade</Link>.</span>
         </label>
         {erro && <p className="text-sm text-red-600">{erro}</p>}
-        <button className="btn-gold w-full" disabled={loading}>{loading ? 'Criando…' : 'Criar conta'}</button>
+        <button className="btn-taupe w-full" disabled={loading}>{loading ? 'Criando…' : 'Criar conta'}</button>
         <p className="text-center text-sm">Já tem conta? <Link href="/entrar" className="underline">Entrar</Link></p>
       </form>
     </div>

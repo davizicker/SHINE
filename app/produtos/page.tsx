@@ -42,7 +42,8 @@ export default async function Catalogo({ searchParams }: { searchParams: Promise
 
   return (
     <div className="container-x py-10">
-      <h1 className="text-4xl">{cat ? cat.nome : 'Todas as joias'}</h1>
+      <p className="eyebrow">Coleção</p>
+      <h1 className="mt-1 text-5xl">{cat ? cat.nome : "Todas as peças"}</h1>
 
       <div className="mt-6 flex flex-wrap gap-2">
         <Link href="/produtos" className={chip(!cat)}>Todas</Link>

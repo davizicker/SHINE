@@ -2,10 +2,14 @@ import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
 import ProductCard from '@/components/ProductCard';
 import SetupNotice from '@/components/SetupNotice';
+import Logo from '@/components/Logo';
 import type { Category, Product } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
+const wa = process.env.NEXT_PUBLIC_WHATSAPP;
+const address = process.env.NEXT_PUBLIC_ADDRESS;
+const ig = process.env.NEXT_PUBLIC_INSTAGRAM;
 const SELECT = '*, product_images(url, posicao), categories(nome, slug)';
 
 export default async function Home() {
@@ -19,16 +23,24 @@ export default async function Home() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-blush via-cream to-gold-light/50">
-        <div className="container-x py-20 text-center sm:py-28">
-          <p className="text-sm uppercase tracking-[0.3em] text-gold-dark">Bijuterias</p>
-          <h1 className="mx-auto mt-4 max-w-2xl text-5xl leading-tight sm:text-6xl">
-            Brilho que combina com você
-          </h1>
-          <p className="mx-auto mt-4 max-w-lg text-ink/70">
-            Peças delicadas, escolhidas com carinho. Pague com Pix ou cartão e receba em todo o Brasil.
-          </p>
-          <Link href="/produtos" className="btn-gold mt-8">Ver todas as joias</Link>
+      <section className="bg-cream">
+        <div className="container-x grid items-center gap-10 py-14 md:grid-cols-2 md:py-24">
+          <div className="text-center md:text-left">
+            <p className="eyebrow">Bijuterias &amp; semijoias</p>
+            <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">
+              More than accessories,<br /><em className="font-normal text-taupe-dark">it’s a lifestyle.</em>
+            </h1>
+            <p className="mx-auto mt-5 max-w-md text-ink/70 md:mx-0">
+              Colares, brincos, pulseiras e anéis para compor o seu look — do delicado ao statement. Pague com Pix ou cartão e receba em todo o Brasil.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+              <Link href="/produtos" className="btn-taupe">Ver coleção</Link>
+              {wa && <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="btn-outline">Falar no WhatsApp</a>}
+            </div>
+          </div>
+          <div className="mx-auto flex aspect-square w-full max-w-sm items-center justify-center rounded-full bg-taupe">
+            <Logo size="lg" light />
+          </div>
         </div>
       </section>
 
@@ -42,7 +54,8 @@ export default async function Home() {
 
       {(destaques as Product[] | null)?.length ? (
         <section className="container-x mt-14">
-          <h2 className="mb-6 text-3xl">Destaques</h2>
+          <p className="eyebrow">Seleção</p>
+          <h2 className="mb-6 mt-1 text-4xl">Destaques</h2>
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {(destaques as Product[]).map((p) => <ProductCard key={p.id} p={p} />)}
           </div>
@@ -50,7 +63,8 @@ export default async function Home() {
       ) : null}
 
       <section className="container-x mt-14">
-        <h2 className="mb-6 text-3xl">Novidades</h2>
+        <p className="eyebrow">Acabou de chegar</p>
+        <h2 className="mb-6 mt-1 text-4xl">Novidades</h2>
         {(novos as Product[] | null)?.length ? (
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {(novos as Product[]).map((p) => <ProductCard key={p.id} p={p} />)}
@@ -58,6 +72,22 @@ export default async function Home() {
         ) : (
           <p className="text-ink/60">Em breve, novas peças por aqui ✦</p>
         )}
+      </section>
+      <section className="container-x mt-20">
+        <div className="grid gap-6 rounded-3xl bg-sand p-8 sm:p-12 md:grid-cols-2">
+          <div>
+            <p className="eyebrow">Ateliê</p>
+            <h2 className="mt-2 text-4xl">Venha conhecer de pertinho</h2>
+            <p className="mt-3 text-ink/70">
+              Além da loja online, a Shine Factory tem showroom{address ? '' : ' em Minas Gerais'}. Fale com a gente para combinar sua visita.
+            </p>
+          </div>
+          <div className="space-y-2 text-sm md:pt-8">
+            {address && <p>📍 {address}</p>}
+            {ig && <p>Instagram: <a className="underline" target="_blank" rel="noreferrer" href={`https://instagram.com/${ig}`}>@{ig}</a></p>}
+            {wa && <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="btn-taupe mt-3">Agendar visita</a>}
+          </div>
+        </div>
       </section>
     </>
   );

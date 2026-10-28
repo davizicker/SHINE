@@ -52,16 +52,16 @@ export default async function ProdutoPage({ params }: { params: Promise<{ slug: 
   return (
     <div className="container-x py-10">
       <p className="mb-6 text-sm text-ink/50">
-        <Link href="/produtos" className="hover:text-gold">Joias</Link>
-        {product.categories && <> / <Link href={`/produtos?categoria=${product.categories.slug}`} className="hover:text-gold">{product.categories.nome}</Link></>}
+        <Link href="/produtos" className="hover:text-taupe">Joias</Link>
+        {product.categories && <> / <Link href={`/produtos?categoria=${product.categories.slug}`} className="hover:text-taupe">{product.categories.nome}</Link></>}
       </p>
       <div className="grid gap-10 md:grid-cols-2">
         <Gallery images={imgs} alt={product.nome} />
         <div>
-          <h1 className="text-4xl">{product.nome}</h1>
+          <h1 className="text-5xl">{product.nome}</h1>
           <p className="mt-4 text-3xl">
             {onSale(product) && <span className="mr-3 text-xl text-ink/40 line-through">{brl(product.preco)}</span>}
-            <span className="text-gold-dark">{brl(price)}</span>
+            <span className="text-taupe-dark">{brl(price)}</span>
           </p>
           <p className="mt-1 text-sm text-ink/60">em até 6x no cartão · ou à vista no Pix</p>
           <div className="mt-6">

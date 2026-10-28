@@ -27,7 +27,7 @@ export default async function PedidoAdmin({ params, searchParams }: {
           </select></div>
         <div><label className="label">Código de rastreio</label>
           <input name="codigo_rastreio" defaultValue={o.codigo_rastreio ?? ''} className="input" placeholder="AA123456789BR" /></div>
-        <div className="flex items-end"><button className="btn-gold w-full">Salvar</button></div>
+        <div className="flex items-end"><button className="btn-taupe w-full">Salvar</button></div>
         {sp.salvo && <p className="text-sm text-green-700 sm:col-span-3">Pedido atualizado ✦</p>}
       </form>
 

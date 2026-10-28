@@ -18,7 +18,7 @@ export default function NovaSenha() {
         <input className="input" type="password" minLength={8} required value={senha}
           onChange={(e) => setSenha(e.target.value)} placeholder="Mínimo 8 caracteres" autoComplete="new-password" />
         {msg && <p className="text-sm">{msg}</p>}
-        <button className="btn-gold w-full">Salvar</button>
+        <button className="btn-taupe w-full">Salvar</button>
       </form>
     </div>
   );

@@ -169,8 +169,8 @@ create policy "fotos: admin apaga" on storage.objects for delete
 
 -- ============ DADOS INICIAIS ============
 insert into public.categories (nome, slug) values
-  ('Brincos','brincos'), ('Colares','colares'), ('Pulseiras','pulseiras'),
-  ('Anéis','aneis'), ('Conjuntos','conjuntos')
+  ('Colares','colares'), ('Brincos','brincos'), ('Pulseiras','pulseiras'),
+  ('Anéis','aneis'), ('Pérolas','perolas'), ('Conjuntos','conjuntos')
 on conflict do nothing;
 
 -- Depois de criar sua conta no site, torne-se admin (troque o e-mail):

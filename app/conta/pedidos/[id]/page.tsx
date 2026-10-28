@@ -22,7 +22,7 @@ export default async function Pedido({ params, searchParams }: {
       {['approved', 'pending', 'in_process'].includes(returned ?? '') && <ClearCart />}
       <Link href="/conta" className="text-sm underline">← Minha conta</Link>
       <h1 className="mt-3 text-4xl">Pedido #{o.id.slice(0, 8).toUpperCase()}</h1>
-      <p className="mt-1 text-ink/60">{formatDate(o.created_at)} · <span className="badge bg-blush">{STATUS_LABEL[o.status]}</span></p>
+      <p className="mt-1 text-ink/60">{formatDate(o.created_at)} · <span className="badge bg-sand">{STATUS_LABEL[o.status]}</span></p>
 
       {o.status === 'aguardando_pagamento' && (
         <p className="card mt-4 text-sm">

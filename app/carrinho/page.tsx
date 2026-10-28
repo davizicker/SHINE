@@ -11,7 +11,7 @@ export default function Carrinho() {
     return (
       <div className="container-x py-20 text-center">
         <h1 className="text-4xl">Seu carrinho está vazio</h1>
-        <Link href="/produtos" className="btn-gold mt-6">Ver joias</Link>
+        <Link href="/produtos" className="btn-taupe mt-6">Ver joias</Link>
       </div>
     );
   }
@@ -47,7 +47,7 @@ export default function Carrinho() {
         <h2 className="text-2xl">Resumo</h2>
         <p className="mt-4 flex justify-between"><span>Subtotal</span><span>{brl(subtotal)}</span></p>
         <p className="mt-1 text-xs text-ink/50">Frete calculado na próxima etapa.</p>
-        <Link href="/checkout" className="btn-gold mt-5 w-full">Finalizar compra</Link>
+        <Link href="/checkout" className="btn-taupe mt-5 w-full">Finalizar compra</Link>
         <Link href="/produtos" className="mt-3 block text-center text-sm underline">Continuar comprando</Link>
       </aside>
     </div>

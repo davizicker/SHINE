@@ -26,7 +26,7 @@ export default async function Pedidos({ searchParams }: { searchParams: Promise<
               <tr key={o.id} className="border-b border-ink/5 hover:bg-cream">
                 <td className="td"><Link className="underline" href={`/admin/pedidos/${o.id}`}>#{o.id.slice(0, 8).toUpperCase()}</Link></td>
                 <td className="td">{o.endereco?.nome}</td><td className="td">{formatDate(o.created_at)}</td>
-                <td className="td">{brl(o.total)}</td><td className="td"><span className="badge bg-blush">{STATUS_LABEL[o.status]}</span></td>
+                <td className="td">{brl(o.total)}</td><td className="td"><span className="badge bg-sand">{STATUS_LABEL[o.status]}</span></td>
               </tr>
             ))}
           </tbody>

@@ -27,14 +27,14 @@ export default async function Conta({ searchParams }: { searchParams: Promise<{ 
           <ul className="space-y-3">
             {orders.map((o) => (
               <li key={o.id}>
-                <Link href={`/conta/pedidos/${o.id}`} className="card flex items-center justify-between hover:border-gold">
+                <Link href={`/conta/pedidos/${o.id}`} className="card flex items-center justify-between hover:border-taupe">
                   <div>
                     <p className="font-medium">Pedido #{o.id.slice(0, 8).toUpperCase()}</p>
                     <p className="text-sm text-ink/50">{formatDate(o.created_at)}</p>
                   </div>
                   <div className="text-right">
                     <p>{brl(o.total)}</p>
-                    <span className="badge bg-blush">{STATUS_LABEL[o.status]}</span>
+                    <span className="badge bg-sand">{STATUS_LABEL[o.status]}</span>
                   </div>
                 </Link>
               </li>
@@ -67,7 +67,7 @@ export default async function Conta({ searchParams }: { searchParams: Promise<{ 
             <div className="col-span-2"><label className="label">Cidade</label><input name="cidade" className="input" defaultValue={p.cidade ?? ''} /></div>
             <div><label className="label">UF</label><input name="uf" maxLength={2} className="input" defaultValue={p.uf ?? ''} /></div>
           </div>
-          <button className="btn-gold w-full">Salvar</button>
+          <button className="btn-taupe w-full">Salvar</button>
         </form>
         <div className="mt-4 flex items-center justify-between text-sm">
           <Link href="/conta/senha" className="underline">Alterar senha</Link>

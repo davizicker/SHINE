@@ -71,7 +71,7 @@ export default function ProductForm({ product, images: initial, categories, erro
           <label className="flex items-center gap-2"><input type="checkbox" name="ativo" defaultChecked={p?.ativo ?? true} /> Visível na loja</label>
           <label className="flex items-center gap-2"><input type="checkbox" name="destaque" defaultChecked={p?.destaque ?? false} /> Destaque na home</label>
         </div>
-        <button className="btn-gold" disabled={busy}>{busy ? 'Enviando fotos…' : 'Salvar peça'}</button>
+        <button className="btn-taupe" disabled={busy}>{busy ? 'Enviando fotos…' : 'Salvar peça'}</button>
       </div>
 
       <div className="card h-fit space-y-3">
@@ -87,7 +87,7 @@ export default function ProductForm({ product, images: initial, categories, erro
             <li key={src} className="relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={src} alt="" className="aspect-square w-full rounded-xl object-cover" />
-              {i === 0 && <span className="badge absolute left-2 top-2 bg-gold text-white">Principal</span>}
+              {i === 0 && <span className="badge absolute left-2 top-2 bg-taupe text-white">Principal</span>}
               <div className="mt-1 flex justify-between text-xs">
                 <button type="button" onClick={() => move(i, -1)} disabled={i === 0}>←</button>
                 <button type="button" className="text-red-600" onClick={() => setImages((c) => c.filter((_, k) => k !== i))}>remover</button>

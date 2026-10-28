@@ -33,7 +33,7 @@ export default async function Resumo() {
           {!recentes?.length ? <p className="text-sm text-ink/50">Nenhum pedido ainda.</p> : (
             <ul className="divide-y divide-ink/10">
               {recentes.map((o) => (
-                <li key={o.id}><Link href={`/admin/pedidos/${o.id}`} className="flex justify-between py-2 text-sm hover:text-gold">
+                <li key={o.id}><Link href={`/admin/pedidos/${o.id}`} className="flex justify-between py-2 text-sm hover:text-taupe">
                   <span>#{o.id.slice(0, 8).toUpperCase()} · {o.endereco?.nome} · {formatDate(o.created_at)}</span>
                   <span>{brl(o.total)} · {STATUS_LABEL[o.status]}</span>
                 </Link></li>
@@ -46,7 +46,7 @@ export default async function Resumo() {
           {!baixo?.length ? <p className="text-sm text-ink/50">Tudo certo por aqui ✦</p> : (
             <ul className="divide-y divide-ink/10">
               {baixo.map((p) => (
-                <li key={p.id}><Link href={`/admin/produtos/${p.id}`} className="flex justify-between py-2 text-sm hover:text-gold">
+                <li key={p.id}><Link href={`/admin/produtos/${p.id}`} className="flex justify-between py-2 text-sm hover:text-taupe">
                   <span>{p.nome}</span><b>{p.estoque === 0 ? 'Esgotado' : `${p.estoque} un.`}</b>
                 </Link></li>
               ))}

@@ -130,3 +130,21 @@ shine/
 ├─ supabase/migrations/  # SQL versionado
 └─ README.md
 ```
+
+## 10. Pesquisa da marca (Instagram + web)
+
+**Confirmado nos prints do Instagram (@atelie.shine):**
+- Nome: Shine Factory · ~2,8 mil seguidores · bio: "Perfil Reserva, Sigam"
+- Endereço: Rodovia Januário Carneiro, 8780, sala 913 (Vale do Sereno)
+- Link da bio: `msha.ke/shinefactory` (catálogo atual, fora do site próprio) · destaques: Black Friday, Catálogo, Info
+- Logo: círculo cinza-bege (`#7f756b` medido no print) com "SHINE" em serifa espaçada, brilho sobre o "I" e "factory" em cursiva
+- Estilo visual: tons neutros (creme, bege, marrom-café), peças douradas e pérolas, fotos de look no corpo (colares em camadas, maxi correntes, brincos estrela, pulseiras, chokers), showroom bege com a frase **"More than accessories, it's a lifestyle"**
+
+**Encontrado na web (a confirmar com a dona):**
+- Perfil @_shinefactory no Instagram com o mesmo endereço, categoria "bijus e semijoias"
+- Página no Facebook "Shine Factory — Acessórios femininos" apontando para `shinefactory.com.br` (o domínio pode já ser dela)
+- Existem várias outras empresas "Shine Factory" (estética automotiva, etc.) que **não** são a loja
+
+**Dúvidas:** @atelie.shine e @_shinefactory são da mesma loja? Vale do Sereno fica em Nova Lima (região de BH): confirmar como ela quer apresentar a cidade. O domínio shinefactory.com.br é dela?
+
+**Aplicado no site:** paleta (taupe/creme/areia/champagne), logo em texto, fontes (Cormorant Garamond + Jost + Allura), frase-assinatura, bloco "Ateliê" com endereço e categorias iniciais (colares, brincos, pulseiras, anéis, pérolas, conjuntos).

@@ -29,13 +29,13 @@ export default function AddToCart(props: Props) {
       </div>
       <button
         type="button"
-        className="btn-gold w-full"
+        className="btn-taupe w-full"
         onClick={() => { add(props, qtd); setDone(true); setTimeout(() => setDone(false), 3000); }}
       >
         Adicionar ao carrinho
       </button>
       {done && (
-        <p className="text-center text-sm text-gold-dark">
+        <p className="text-center text-sm text-taupe-dark">
           Adicionado! <Link href="/carrinho" className="underline">Ver carrinho</Link>
         </p>
       )}

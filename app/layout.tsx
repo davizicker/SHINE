@@ -9,12 +9,20 @@ const name = process.env.NEXT_PUBLIC_SITE_NAME || 'Shine Factory';
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: { default: `${name} — Bijuterias`, template: `%s | ${name}` },
-  description: 'Bijuterias delicadas e cheias de brilho. Brincos, colares, pulseiras e anéis com envio para todo o Brasil.',
+  description: 'Shine Factory: bijuterias e semijoias — colares, brincos, pulseiras e anéis. More than accessories, it’s a lifestyle. Envio para todo o Brasil.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <CartProvider>
           <Header />

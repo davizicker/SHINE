@@ -14,7 +14,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <div className="container-x py-8">
       <nav className="mb-8 flex gap-2 overflow-x-auto border-b border-ink/10 pb-3">
         {links.map(([href, label]) => (
-          <Link key={href} href={href} className="whitespace-nowrap rounded-full px-4 py-2 text-sm hover:bg-blush">{label}</Link>
+          <Link key={href} href={href} className="whitespace-nowrap rounded-full px-4 py-2 text-sm hover:bg-sand">{label}</Link>
         ))}
       </nav>
       {children}

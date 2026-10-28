@@ -14,7 +14,7 @@ export default async function Produtos({ searchParams }: { searchParams: Promise
     <div>
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-4xl">Produtos</h1>
-        <Link href="/admin/produtos/novo" className="btn-gold">+ Nova peça</Link>
+        <Link href="/admin/produtos/novo" className="btn-taupe">+ Nova peça</Link>
       </div>
       {sp.salvo && <p className="mb-4 text-sm text-green-700">Peça salva ✦</p>}
       <div className="card overflow-x-auto p-0">

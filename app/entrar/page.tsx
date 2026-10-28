@@ -35,7 +35,7 @@ function Form() {
       <div><label className="label">Senha</label>
         <input className="input" type="password" required value={senha} onChange={(e) => setSenha(e.target.value)} autoComplete="current-password" /></div>
       {erro && <p className="text-sm text-red-600">{erro}</p>}
-      <button className="btn-gold w-full" disabled={loading}>{loading ? 'Entrando…' : 'Entrar'}</button>
+      <button className="btn-taupe w-full" disabled={loading}>{loading ? 'Entrando…' : 'Entrar'}</button>
       <p className="text-center text-sm">
         <Link href="/recuperar-senha" className="underline">Esqueci minha senha</Link> ·{' '}
         <Link href="/cadastro" className="underline">Criar conta</Link>

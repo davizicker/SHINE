@@ -5,18 +5,19 @@
 @layer base {
   html { scroll-behavior: smooth; }
   body { @apply bg-cream font-sans text-ink antialiased; }
-  h1, h2, h3 { @apply font-serif; }
+  h1, h2, h3 { @apply font-serif font-medium; }
 }
 
 @layer components {
   .container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
-  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition disabled:cursor-not-allowed disabled:opacity-50; }
-  .btn-gold { @apply btn bg-gold text-white hover:bg-gold-dark; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-xs font-medium uppercase tracking-[0.18em] transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-taupe { @apply btn bg-taupe text-white hover:bg-taupe-dark; }
   .btn-dark { @apply btn bg-ink text-cream hover:bg-black; }
   .btn-outline { @apply btn border border-ink/30 text-ink hover:border-ink; }
-  .input { @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30; }
+  .input { @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-taupe focus:ring-2 focus:ring-taupe/30; }
   .label { @apply mb-1 block text-xs font-medium uppercase tracking-wider text-ink/60; }
-  .card { @apply rounded-2xl border border-ink/10 bg-white p-5 shadow-sm; }
+  .card { @apply rounded-2xl border border-ink/10 bg-white p-5; }
+  .eyebrow { @apply text-xs uppercase tracking-[0.3em] text-taupe; }
   .badge { @apply inline-block rounded-full px-3 py-1 text-xs font-medium; }
   .th { @apply px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-ink/50; }
   .td { @apply px-4 py-3 text-sm; }

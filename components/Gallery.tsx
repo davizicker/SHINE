@@ -15,7 +15,7 @@ export default function Gallery({ images, alt }: { images: string[]; alt: string
         <div className="mt-3 flex gap-2 overflow-x-auto">
           {images.map((src, idx) => (
             <button key={src} type="button" onClick={() => setI(idx)} aria-label={`Foto ${idx + 1}`}
-              className={`h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 ${idx === i ? 'border-gold' : 'border-transparent'}`}>
+              className={`h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 ${idx === i ? 'border-taupe' : 'border-transparent'}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={src} alt="" className="h-full w-full object-cover" />
             </button>

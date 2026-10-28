@@ -70,7 +70,7 @@ export default function Checkout() {
 
   if (!ready) return <div className="container-x py-16 text-center text-ink/50">Carregando…</div>;
   if (items.length === 0) {
-    return <div className="container-x py-20 text-center"><p>Seu carrinho está vazio.</p><Link href="/produtos" className="btn-gold mt-4">Ver joias</Link></div>;
+    return <div className="container-x py-20 text-center"><p>Seu carrinho está vazio.</p><Link href="/produtos" className="btn-taupe mt-4">Ver joias</Link></div>;
   }
 
   return (
@@ -97,7 +97,7 @@ export default function Checkout() {
         {!loadingFrete && opts.length === 0 && <p className="text-sm text-ink/50">Digite o CEP para ver as opções.</p>}
         <div className="space-y-2">
           {opts.map((o) => (
-            <label key={o.id} className={`flex cursor-pointer items-center justify-between rounded-xl border p-3 ${sel === o.id ? 'border-gold bg-gold-light/20' : 'border-ink/15'}`}>
+            <label key={o.id} className={`flex cursor-pointer items-center justify-between rounded-xl border p-3 ${sel === o.id ? 'border-taupe bg-taupe-light/20' : 'border-ink/15'}`}>
               <span className="flex items-center gap-3">
                 <input type="radio" name="frete" checked={sel === o.id} onChange={() => setSel(o.id)} />
                 <span>{o.nome}<br /><span className="text-xs text-ink/50">até {o.prazo} dias úteis</span></span>
@@ -115,7 +115,7 @@ export default function Checkout() {
         <p className="flex justify-between text-sm"><span>Frete</span><span>{chosen ? (chosen.preco === 0 ? 'Grátis' : brl(chosen.preco)) : '—'}</span></p>
         <p className="flex justify-between text-lg font-medium"><span>Total</span><span>{brl(total)}</span></p>
         {erro && <p className="text-sm text-red-600">{erro}</p>}
-        <button className="btn-gold mt-2 w-full" disabled={paying}>{paying ? 'Redirecionando…' : 'Pagar com Pix ou cartão'}</button>
+        <button className="btn-taupe mt-2 w-full" disabled={paying}>{paying ? 'Redirecionando…' : 'Pagar com Pix ou cartão'}</button>
         <p className="text-center text-xs text-ink/50">Pagamento seguro pelo Mercado Pago.<br />Valores finais são conferidos pelo servidor.</p>
       </aside>
     </form>

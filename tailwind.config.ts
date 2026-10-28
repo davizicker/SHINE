@@ -1,19 +1,21 @@
 import type { Config } from 'tailwindcss';
 
-// Cores provisórias: trocar pelos valores da identidade visual da Shine.
+// Paleta tirada do logo e do Instagram da Shine Factory (círculo cinza-bege, tons de creme e dourado das peças).
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        ink: '#1f1a17',
-        gold: { DEFAULT: '#b8893b', dark: '#8f6a2a', light: '#e9d6a8' },
-        cream: '#faf6f0',
-        blush: '#f3e4de',
+        ink: '#2a2420',
+        taupe: { DEFAULT: '#7f756b', dark: '#5f564e', light: '#d8cfc3' },
+        cream: '#f6f1ea',
+        sand: '#ebe3d8',
+        champagne: '#b8995e',
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        sans: ['Jost', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        script: ['Allura', '"Snell Roundhand"', 'cursive'],
       },
     },
   },
