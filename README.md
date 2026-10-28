@@ -6,7 +6,9 @@ Next.js 15 + Supabase (banco, login, fotos) + Mercado Pago (Pix e cartão) + fre
 Pix/cartão · cadastro/login/recuperar senha · área do cliente (dados e pedidos) · painel da administradora
 (produtos com várias fotos, preço, estoque, categorias, clientes + CSV, pedidos com status e rastreio).
 
-## Colocar no ar (ordem)
+> **Guia completo, passo a passo, para leigos: [`docs/DEPLOY.md`](docs/DEPLOY.md)**
+
+## Colocar no ar (resumo)
 
 ### 1. Supabase (banco, login, fotos) — grátis
 1. Crie conta em https://supabase.com → **New project** (região South America / São Paulo).

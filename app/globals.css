@@ -22,3 +22,25 @@
   .th { @apply px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-ink/50; }
   .td { @apply px-4 py-3 text-sm; }
 }
+
+/* ===== brilho do logo ===== */
+.shine-spark {
+  position: absolute;
+  pointer-events: none;
+  color: #e9c46a;
+  text-shadow: 0 0 6px rgba(255, 240, 190, 0.9);
+  transform: translate(-50%, -50%);
+  animation: shine-spark 0.8s ease-out forwards;
+  line-height: 1;
+}
+@keyframes shine-spark {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.2) rotate(0deg); }
+  25%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -150%) scale(1.1) rotate(90deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shine-spark { display: none; }
+  html { scroll-behavior: auto; }
+}
+:focus-visible { outline: 2px solid #b8995e; outline-offset: 2px; }
+::selection { background: #d8cfc3; }

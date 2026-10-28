@@ -3,6 +3,8 @@ import './globals.css';
 import { CartProvider } from '@/lib/cart';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const name = process.env.NEXT_PUBLIC_SITE_NAME || 'Shine Factory';
 
@@ -25,9 +27,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="flex min-h-screen flex-col">
         <CartProvider>
+          <AnnouncementBar />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </CartProvider>
       </body>
     </html>

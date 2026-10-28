@@ -21,6 +21,11 @@ export default function ProductCard({ p }: { p: Product }) {
           <img src={imgs[0]} alt={p.nome} loading="lazy"
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         ) : <Placeholder className="h-full w-full" />}
+        {imgs[1] && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={imgs[1]} alt="" loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        )}
         {soldOut && <span className="badge absolute left-3 top-3 bg-ink text-cream">Esgotado</span>}
         {!soldOut && onSale(p) && <span className="badge absolute left-3 top-3 bg-taupe text-white">Promoção</span>}
       </div>

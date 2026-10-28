@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import ProductCard from '@/components/ProductCard';
 import SetupNotice from '@/components/SetupNotice';
 import Logo from '@/components/Logo';
+import TrustStrip from '@/components/TrustStrip';
 import type { Category, Product } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -43,6 +44,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       {(cats as Category[] | null)?.length ? (
         <section className="container-x mt-12 flex flex-wrap justify-center gap-3">

@@ -49,8 +49,22 @@ export default async function ProdutoPage({ params }: { params: Promise<{ slug: 
     related = (data ?? []) as Product[];
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.nome,
+    description: product.descricao ?? undefined,
+    image: imgs,
+    sku: product.sku ?? undefined,
+    offers: {
+      '@type': 'Offer', priceCurrency: 'BRL', price: price.toFixed(2),
+      availability: product.estoque > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+    },
+  };
+
   return (
     <div className="container-x py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <p className="mb-6 text-sm text-ink/50">
         <Link href="/produtos" className="hover:text-taupe">Joias</Link>
         {product.categories && <> / <Link href={`/produtos?categoria=${product.categories.slug}`} className="hover:text-taupe">{product.categories.nome}</Link></>}
