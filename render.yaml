@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: shine
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SITE_NAME
+        value: Shine Factory
+      - key: NEXT_PUBLIC_WHATSAPP
+        sync: false
+      - key: NEXT_PUBLIC_INSTAGRAM
+        value: shinefactory
+      - key: MP_ACCESS_TOKEN
+        sync: false
+      - key: ORIGIN_CEP
+        sync: false
+      - key: MELHOR_ENVIO_TOKEN
+        sync: false
+      - key: FREE_SHIPPING_MIN
+        sync: false
