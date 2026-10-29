@@ -80,8 +80,8 @@ export default function Logo({ size = 'md', light = false, gold = false }: { siz
       aria-label="Shine Factory"
     >
       <span className={WORD}>
-        <span className={gold ? 'gold-text' : ''}>SHINE</span>
-        <span aria-hidden className={`absolute -top-[0.55em] left-[43%] text-[0.4em] tracking-normal ${gold ? 'gold-text' : ''}`}>✦</span>
+        <span className={gold ? `gold-text ${light ? 'gold-bright' : ''}` : ''}>SHINE</span>
+        <span aria-hidden className={`absolute -top-[0.55em] left-[43%] text-[0.4em] tracking-normal ${gold ? `gold-text ${light ? 'gold-bright' : ''}` : ''}`}>✦</span>
         {/* cópia da palavra pintada com o brilho; aparece só com o mouse em cima */}
         <span
           ref={glow}
@@ -96,7 +96,7 @@ export default function Logo({ size = 'md', light = false, gold = false }: { siz
           SHINE
         </span>
       </span>
-      <span aria-hidden className={`-mt-[0.1em] self-end pr-[0.1em] font-script text-[0.62em] ${gold ? 'gold-text' : 'opacity-80'}`}>factory</span>
+      <span aria-hidden className={`-mt-[0.1em] self-end pr-[0.1em] font-script text-[0.62em] ${gold ? `gold-text ${light ? 'gold-bright' : ''}` : 'opacity-80'}`}>factory</span>
 
       {sparks.map((s) => (
         <span key={s.id} aria-hidden className="shine-spark" style={{ left: s.x, top: s.y, fontSize: `${s.r}em` }}>✦</span>

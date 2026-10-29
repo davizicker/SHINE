@@ -60,3 +60,37 @@
   to   { background-position: 100% 50%; }
 }
 @media (prefers-reduced-motion: reduce) { .gold-text { animation: none; } }
+
+/* ===== acabamento ===== */
+.btn-champagne { @apply btn bg-champagne text-ink hover:brightness-110; }
+.btn-ghost { @apply btn border border-cream/40 text-cream hover:border-cream hover:bg-cream/10; }
+
+.gold-bright { background-image: linear-gradient(110deg, #b88a3b 0%, #e6c27a 25%, #fff0c2 45%, #dcb461 65%, #b88a3b 85%, #e6c27a 100%); }
+
+.ambient-spark {
+  position: absolute; color: #e6c27a; opacity: 0; line-height: 1;
+  animation: twinkle 6s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  50% { opacity: 0.75; transform: scale(1) rotate(45deg); }
+}
+
+.marquee { animation: marquee 45s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+html.js .reveal.in { opacity: 1; transform: none; }
+
+.tile::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 244, 205, 0.28) 50%, transparent 65%);
+  transform: translateX(-120%); transition: transform 0.9s ease; pointer-events: none;
+}
+.tile:hover::after { transform: translateX(120%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-spark { animation: none; opacity: 0.4; }
+  .marquee { animation: none; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}

@@ -41,9 +41,11 @@ export default async function Catalogo({ searchParams }: { searchParams: Promise
     `rounded-full border px-4 py-2 text-sm ${active ? 'border-ink bg-ink text-cream' : 'border-ink/20 hover:border-ink'}`;
 
   return (
-    <div className="container-x py-10">
-      <p className="eyebrow">Coleção</p>
-      <h1 className="mt-1 text-5xl">{cat ? cat.nome : "Todas as peças"}</h1>
+    <div className="container-x pb-10">
+      <div className="-mx-4 mb-2 bg-sand px-4 py-10 text-center sm:-mx-6 sm:px-6">
+        <p className="eyebrow">Coleção</p>
+        <h1 className="mt-1 text-5xl">{cat ? cat.nome : 'Todas as peças'}</h1>
+      </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
         <Link href="/produtos" className={chip(!cat)}>Todas</Link>
