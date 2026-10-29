@@ -44,3 +44,19 @@
 }
 :focus-visible { outline: 2px solid #b8995e; outline-offset: 2px; }
 ::selection { background: #d8cfc3; }
+
+/* texto dourado com brilho que passeia devagar */
+.gold-text {
+  background-image: linear-gradient(110deg, #8f6a2a 0%, #b88a3b 22%, #e0bd70 42%, #b88a3b 62%, #8f6a2a 80%, #b88a3b 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-sheen 8s ease-in-out infinite alternate;
+  padding-bottom: 0.08em; /* evita cortar o fim das letras cursivas */
+}
+@keyframes gold-sheen {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) { .gold-text { animation: none; } }

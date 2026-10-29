@@ -4,12 +4,15 @@ import { useEffect, useRef, useState } from 'react';
 // Logo da Shine Factory recriado em texto: SHINE espaçado, brilho sobre o "I" e "factory" em cursiva.
 // Ao passar o mouse (ou o dedo), um brilho dourado acompanha o cursor pelas letras e solta faíscas.
 // Troque por <img src="/logo.svg"> quando tiver o arquivo original.
-const SIZES = { sm: 'text-xl', md: 'text-3xl', lg: 'text-5xl', xl: 'text-6xl sm:text-7xl' };
+const SIZES = {
+  sm: 'text-xl', md: 'text-3xl', lg: 'text-5xl', xl: 'text-6xl sm:text-7xl',
+  xxl: 'text-[3.4rem] sm:text-8xl md:text-[9rem]',
+};
 const WORD = 'relative pl-[0.3em] font-serif font-medium tracking-[0.3em]';
 
 interface Spark { id: number; x: number; y: number; r: number }
 
-export default function Logo({ size = 'md', light = false }: { size?: keyof typeof SIZES; light?: boolean }) {
+export default function Logo({ size = 'md', light = false, gold = false }: { size?: keyof typeof SIZES; light?: boolean; gold?: boolean }) {
   const root = useRef<HTMLSpanElement>(null);
   const glow = useRef<HTMLSpanElement>(null);
   const target = useRef({ x: 0, y: 0 });
@@ -77,8 +80,8 @@ export default function Logo({ size = 'md', light = false }: { size?: keyof type
       aria-label="Shine Factory"
     >
       <span className={WORD}>
-        SHINE
-        <span aria-hidden className="absolute -top-[0.55em] left-[43%] text-[0.4em] tracking-normal">✦</span>
+        <span className={gold ? 'gold-text' : ''}>SHINE</span>
+        <span aria-hidden className={`absolute -top-[0.55em] left-[43%] text-[0.4em] tracking-normal ${gold ? 'gold-text' : ''}`}>✦</span>
         {/* cópia da palavra pintada com o brilho; aparece só com o mouse em cima */}
         <span
           ref={glow}
@@ -93,7 +96,7 @@ export default function Logo({ size = 'md', light = false }: { size?: keyof type
           SHINE
         </span>
       </span>
-      <span aria-hidden className="-mt-[0.1em] self-end pr-[0.1em] font-script text-[0.62em] opacity-80">factory</span>
+      <span aria-hidden className={`-mt-[0.1em] self-end pr-[0.1em] font-script text-[0.62em] ${gold ? 'gold-text' : 'opacity-80'}`}>factory</span>
 
       {sparks.map((s) => (
         <span key={s.id} aria-hidden className="shine-spark" style={{ left: s.x, top: s.y, fontSize: `${s.r}em` }}>✦</span>

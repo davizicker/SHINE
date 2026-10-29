@@ -25,27 +25,26 @@ export default async function Home() {
   return (
     <>
       <section className="bg-cream">
-        <div className="container-x grid items-center gap-10 py-14 md:grid-cols-2 md:py-24">
-          <div className="text-center md:text-left">
-            <p className="eyebrow">Bijuterias &amp; semijoias</p>
-            <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">
-              More than accessories,<br /><em className="font-normal text-taupe-dark">it’s a lifestyle.</em>
-            </h1>
-            <p className="mx-auto mt-5 max-w-md text-ink/70 md:mx-0">
-              Colares, brincos, pulseiras e anéis para compor o seu look — do delicado ao statement. Pague com Pix ou cartão e receba em todo o Brasil.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
-              <Link href="/produtos" className="btn-taupe">Ver coleção</Link>
-              {wa && <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="btn-outline">Falar no WhatsApp</a>}
-            </div>
-          </div>
-          <div className="mx-auto flex aspect-square w-full max-w-sm items-center justify-center rounded-full bg-taupe">
-            <Logo size="lg" light />
+        <div className="container-x flex flex-col items-center py-20 text-center md:py-28">
+          <Logo size="xxl" gold />
+          <p className="eyebrow mt-12">Bijuterias &amp; semijoias</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/produtos" className="btn-taupe">Ver coleção</Link>
+            {wa && <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="btn-outline">Falar no WhatsApp</a>}
           </div>
         </div>
       </section>
 
       <TrustStrip />
+
+      <section className="container-x py-20 text-center">
+        <h2 className="mx-auto max-w-3xl text-4xl leading-tight sm:text-6xl">
+          More than accessories,<br /><em className="font-normal text-taupe-dark">it’s a lifestyle.</em>
+        </h2>
+        <p className="mx-auto mt-5 max-w-lg text-ink/70">
+          Colares, brincos, pulseiras e anéis para compor o seu look — do delicado ao statement. Pague com Pix ou cartão e receba em todo o Brasil.
+        </p>
+      </section>
 
       {(cats as Category[] | null)?.length ? (
         <section className="container-x mt-12 flex flex-wrap justify-center gap-3">
